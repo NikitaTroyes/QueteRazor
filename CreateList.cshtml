@@ -1,0 +1,30 @@
+﻿@using QueteRazor.Controllers; 
+@using QueteRazor.Models
+
+@model List<Expenditure> 
+
+<h2>Liste des dépenses</h2>
+<table>
+    <tbody>
+        @foreach (Expenditure expenditure in Model)
+        {
+            <tr>
+                <td>
+                    @expenditure.Name <br />
+                    acheté le @expenditure.Date  <br />
+                    prix : @expenditure.Price €
+                </td>
+            </tr>
+        }
+        <tr>
+            <td> ---------------------------------</td>
+        </tr>
+        <tr>
+            <td>
+                Somme des dépenses 
+                <br />
+                @ViewData["somme"] €
+            </td>
+        </tr>
+    </tbody>
+</table>
